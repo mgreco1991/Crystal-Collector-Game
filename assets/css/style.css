@@ -1,0 +1,115 @@
+#ruby {
+
+	width: 100px;
+	height: 100px;
+}
+
+#sapphire {
+
+	width: 100px;
+	height: 100px;
+
+}
+
+#emerald {
+
+	width: 100px;
+	height: 100px;
+
+}
+
+#topaz {
+
+	width: 100px;
+	height: 100px;
+
+}
+
+h1 {
+    color: black;
+    text-align: center;
+    font-size: 64px;
+	font-family: 'Dancing Script', cursive;
+
+}
+
+#rubyDiv {
+    position: absolute;
+    left: 850px;
+    top: 609px;
+}
+
+#sapphireDiv {
+
+	position: absolute;
+	left: 850px;
+	top: 500px;
+}
+
+#topazDiv {
+    position: absolute;
+    left: 960px;
+    top: 609px;
+}
+
+#emeraldDiv {
+    position: absolute;
+    left: 960px;
+    top: 499px;
+}
+
+#instructionBox {
+
+	background-color: white;
+	box-shadow: inset 0px 0px 40px 40px #dda885;
+	padding: 20px;
+	text-align: center;
+	margin-left: 300px;
+	margin-right: 300px;
+}
+
+#target {
+    position: absolute;
+    left: 299px;
+}
+
+#rngBox {
+    position: absolute;
+    left: 452px;
+    top: 477px;
+}
+
+#winBox {
+    position: absolute;
+    left: 454px;
+    top: 525px;
+}
+
+#winDiv {
+    position: absolute;
+    left: 382px;
+    top: 504px;
+}
+
+#lossDiv {
+    position: absolute;
+    left: 372px;
+    top: 531px;
+}
+
+#lossBox {
+    position: absolute;
+    left: 454px;
+    top: 553px;
+}
+
+#totalScoreDiv {
+    position: absolute;
+    left: 532px;
+}
+
+#totalScoreBox {
+    position: absolute;
+    left: 737px;
+    top: 477px;
+}
