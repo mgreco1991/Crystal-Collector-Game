@@ -23,9 +23,9 @@ $( document ).ready(function() {
 
     var losses = 0;
 
-    //create a variable that stores the total score. The total score adds up as you click on the gems. For example,
-    //if the ruby is randomly set to a value of two and the topaz is randomly set to a value of 6 in one game, 
-    //and the user clicks on the ruby and the topaz in succession, the total score should be displayed first as 2, then
+    //create a variable that stores the total score. The total score accumulates as the user clicks on the gems. For example,
+    //if the ruby is randomly set to a value of 2 and the topaz is randomly set to a value of 6 in one game, 
+    //and the user clicks on the ruby and the topaz in succession, the total score should be displayed first as 2, and then
     //as 8. 
 
     //initialize the total score to be zero
@@ -36,13 +36,13 @@ $( document ).ready(function() {
 
     function reset() {
 
-        //generate a new target number with the RNG
+      //generate a new target number with the RNG
 
       targetNum = Math.floor(Math.random() *103 + 18);
 
       //tack it onto the divbox
 
-      $("#rngBox").text( targetNum );
+      $(".rngBox").text( targetNum );
 
       //reset every gemstone's value
 
@@ -60,7 +60,7 @@ $( document ).ready(function() {
 
       //tack it onto the divbox
 
-      $( "#totalScoreBox" ).text( totalScore );
+      $( ".totalScoreBox" ).text( totalScore );
 
       } 
 
@@ -69,7 +69,7 @@ $( document ).ready(function() {
 
         alert("You win!");
         wins++;
-        $( "#winBox" ).text( wins );
+        $( ".winBox" ).text( wins );
 
         //notice how we can call the reset function to do the rest without re-writing code! 
         reset();
@@ -79,44 +79,51 @@ $( document ).ready(function() {
 
         alert("You lose!");
         losses++;
-        $( "#lossBox" ).text( losses );
+        $( ".lossBox" ).text( losses );
         reset();
       }
 
-      //this code will execute if the game is in play and the 
+      //this code will execute if the game is in play, i.e. as long as the 
+      //target number is greater than the total score  
 
     if (targetNum > totalScore) {
 
     	//display everything in the correct divbox
 
-    	$( "#rngBox" ).text( targetNum );
+    	$( ".rngBox" ).text( targetNum );
 
-    	$( "#totalScoreBox" ).text( totalScore );
+    	$( ".totalScoreBox" ).text( totalScore );
 
-    	$( "#lossBox" ).text( losses );
+    	$( ".lossBox" ).text( losses );
 
-    	$( "#winBox" ).text( wins );
+    	$( ".winBox" ).text( wins );
 
 
 
     	//create an onclick function for each gem
 
-        $( "#rubyDiv" ).on('click', function(){
+        $( ".rubyDiv" ).on('click', function(){
 
+
+            // the total score accumulates with ruby +=. This is true for all gems
             totalScore = totalScore + rubyValue;
-            $( "#totalScoreBox" ).text(totalScore);
+            $( ".totalScoreBox" ).text(totalScore);
+            //if the total score and target number match, the player wins, and the 
+            //youWin function is called
             if (totalScore === targetNum){
                 youWin();
             }
+            //if the totalScore goes over the value of the target number,
+            //the youLose function executes
             else if (totalScore > targetNum){
                 youLose();
             }
         })
 
-         $( "#emeraldDiv" ).on('click', function(){
+         $( ".emeraldDiv" ).on('click', function(){
 
             totalScore = totalScore + emeraldValue;
-            $( "#totalScoreBox" ).text(totalScore);
+            $( ".totalScoreBox" ).text(totalScore);
             if (totalScore === targetNum){
                 youWin();
             }
@@ -125,10 +132,10 @@ $( document ).ready(function() {
             }
         })
 
-          $( "#sapphireDiv" ).on('click', function(){
+          $( ".sapphireDiv" ).on('click', function(){
 
             totalScore = totalScore + sapphireValue;
-            $( "#totalScoreBox" ).text(totalScore);
+            $( ".totalScoreBox" ).text(totalScore);
             if (totalScore === targetNum){
                 youWin();
             }
@@ -137,10 +144,10 @@ $( document ).ready(function() {
             }
         })
 
-           $( "#topazDiv" ).on('click', function(){
+           $( ".topazDiv" ).on('click', function(){
 
             totalScore = totalScore + topazValue;
-            $( "#totalScoreBox" ).text(totalScore);
+            $( ".totalScoreBox" ).text(totalScore);
             if (totalScore === targetNum){
                 youWin();
             }

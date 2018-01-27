@@ -1,2 +1,2 @@
 # Crystal-Collector-Game
-This is a game in which you must collect crystals to match the number on the screen. 
+This is a game in which the user clicks on pictures of crystals with randomly generated number values to accumulate a total score. The object of the game is to match the number on the screen. If the user's total score exceeds the target number displayed, the user loses. The game will continue in the web browser for as long as the user wishes, and a win and loss counter will also run, allowing for the user to keep track of wins and losses. 
